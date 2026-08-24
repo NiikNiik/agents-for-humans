@@ -1,0 +1,82 @@
+{
+  "user_name": "Sample User",
+  "favorite_artists": [
+    "Young Thug",
+    "Travis Scott",
+    "Future",
+    "Frank Ocean",
+    "SZA"
+  ],
+  "liked_songs": [
+    {
+      "title": "90210",
+      "artist": "Travis Scott",
+      "type": "song",
+      "tags": ["hip-hop", "atmospheric", "melodic"]
+    },
+    {
+      "title": "Pink + White",
+      "artist": "Frank Ocean",
+      "type": "song",
+      "tags": ["alternative R&B", "chill", "melodic"]
+    },
+    {
+      "title": "Codeine Crazy",
+      "artist": "Future",
+      "type": "song",
+      "tags": ["hip-hop", "melodic trap", "moody"]
+    },
+    {
+      "title": "Good Days",
+      "artist": "SZA",
+      "type": "song",
+      "tags": ["R&B", "chill", "reflective"]
+    },
+    {
+      "title": "Relationship",
+      "artist": "Young Thug",
+      "type": "song",
+      "tags": ["hip-hop", "trap", "melodic"]
+    }
+  ],
+  "followed_podcasts": [
+    {
+      "name": "Acquired",
+      "type": "podcast",
+      "topics": ["business", "technology", "companies"]
+    },
+    {
+      "name": "Lex Fridman Podcast",
+      "type": "podcast",
+      "topics": ["AI", "science", "technology"]
+    },
+    {
+      "name": "Darknet Diaries",
+      "type": "podcast",
+      "topics": ["cybersecurity", "technology", "hacking"]
+    }
+  ],
+  "interests": [
+    "artificial intelligence",
+    "cloud computing",
+    "cybersecurity",
+    "history",
+    "urbanism",
+    "music discovery",
+    "technology"
+  ],
+  "preferences": {
+    "music_mood": [
+      "melodic",
+      "atmospheric",
+      "chill"
+    ],
+    "discovery_goal": "Find interesting media across different platforms and media types.",
+    "preferred_media_types": [
+      "music",
+      "podcasts",
+      "audiobooks",
+      "videos"
+    ]
+  }
+}
