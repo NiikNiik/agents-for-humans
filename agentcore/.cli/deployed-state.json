@@ -1,0 +1,17 @@
+{
+  "targets": {
+    "default": {
+      "resources": {
+        "runtimes": {
+          "RecommendationAgent": {
+            "runtimeId": "agentsforhumanscore_RecommendationAgent-UUT3f87YaO",
+            "runtimeArn": "arn:aws:bedrock-agentcore:us-west-2:471112779923:runtime/agentsforhumanscore_RecommendationAgent-UUT3f87YaO",
+            "roleArn": "arn:aws:iam::471112779923:role/AgentCore-agentsforhumans-ApplicationAgentRecommend-0V644XxB4R5p"
+          }
+        },
+        "stackName": "AgentCore-agentsforhumanscore-default",
+        "deployHash": "ab4eed394518cc6a"
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 from strands import Agent, tool
 import json
-
+from bedrock_agentcore.runtime import BedrockAgentCoreApp
 
 @tool
 def get_media_profile() -> dict:
@@ -65,27 +65,20 @@ Later versions of this agent will add:
 """
 
 
-def main():
-    agent = Agent(
-        system_prompt=SYSTEM_PROMPT,
-        tools=[get_media_profile],
-    )
+app = BedrockAgentCoreApp()
 
-    print("Personal Media Agent")
-    print("Ask for personalized music, podcast, audiobook, video, or book recommendations.")
-    print("Type 'exit' or 'quit' at any time to end the session.\n")
+agent = Agent(
+    system_prompt=SYSTEM_PROMPT,
+    tools=[get_media_profile],
+)
 
-    while True:
-        user_request = input("What would you like recommendations for? ").strip()
 
-        if user_request.lower() in {"quit", "exit"}:
-            break
-
-        if not user_request:
-            continue
-
-        response = agent(user_request)
-        
+@app.entrypoint
+def invoke(payload):
+    """Process user input and return a response."""
+    user_message = payload.get("prompt", "Hello")
+    result = agent(user_message)
+    return {"result": result.message}        
 
 if __name__ == "__main__":
-    main()
+    app.run()

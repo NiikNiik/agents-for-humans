@@ -1,0 +1,42 @@
+AgentCore deployed invocation test
+
+> 3 podcasts
+
+  {
+    "role": "assistant",
+    "content": [
+      {
+  "text": "Based on your profile — you follow **Acquired**, **Lex Fridman**, and **Darknet Diaries**, and you're interested in AI, cybersecurity, business, history, and urbanism — here are 3 podcast
+  recommendations that connect your existing signals while introducing some novelty:\n\n```json\n[\n    {\n        \"placeInQueue\": 1,\n        \"publisherName\": \"Hardcore History (Dan Carlin)\",\n
+  \"mediaTitle\": \"Hardcore History\",\n        \"mediaType\": \"podcast\",\n        \"explanationForRecommendation\": \"Your interest in history combined with your appetite for deep, long-form content
+  (evidenced by following Acquired and Lex Fridman) makes this a strong fit. Dan Carlin delivers immersive, narrative-driven deep dives into major historical events — a great complement to your tech-heavy
+  podcast diet.\",\n        \"categories\": [\"history\", \"narrative\", \"long-form\"]\n    },\n    {\n        \"placeInQueue\": 2,\n        \"publisherName\": \"Bloomberg\",\n        \"mediaTitle\": \"Odd
+  Lots\",\n        \"mediaType\": \"podcast\",\n        \"explanationForRecommendation\": \"You follow Acquired for its business and company deep dives. Odd Lots (hosted by Joe Weisenthal & Tracy Alloway)
+  explores macro economics, markets, and industry trends with the same intellectual rigor — a natural expansion of your business interest without fully overlapping with Acquired's format.\",\n
+  \"categories\": [\"business\", \"economics\", \"technology\"]\n    },\n    {\n        \"placeInQueue\": 3,\n        \"publisherName\": \"99% Invisible (Roman Mars)\",\n        \"mediaTitle\": \"99%
+  Invisible\",\n        \"mediaType\": \"podcast\",\n        \"explanationForRecommendation\": \"Your listed interest in urbanism is a direct match here. 99% Invisible covers the unnoticed design and
+  architecture shaping cities and everyday life. It also ties into your broader curiosity about how systems (tech, cities, history) work — a thematic thread running through your current podcast lineup.\",\n
+  \"categories\": [\"urbanism\", \"design\", \"architecture\", \"history\"]\n    }\n]\n```\n\n### Why these work for you:\n| Podcast | Profile Signal |\n|---|---|\n| Hardcore History | History interest +
+  love of long-form |\n| Odd Lots | Business interest (Acquired fan) + tech overlap |\n| 99% Invisible | Urbanism interest (unique angle not yet in your queue) |\n\nLet me know if you'd like deeper dives
+  into any of these or want recommendations in a different category! 🎧"
+      }
+    ],
+    "metadata": {
+      "usage": {
+        "inputTokens": 1503,
+        "outputTokens": 614,
+        "totalTokens": 2117
+      },
+      "metrics": {
+        "latencyMs": 12038,
+        "timeToFirstByteMs": 819
+      }
+    },
+    "tracking_id": "87d467d6-f003-475d-bf03-4c8e0fcced0d"
+  }
+
+
+Result:
+Successful invocation against deployed Agents for Humans agent.
+
+This is useful later when you write the README and Devpost submission because you will not have to recreate proof that the deployed version worked.
