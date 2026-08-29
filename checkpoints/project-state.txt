@@ -1,0 +1,126 @@
+===== DATE =====
+Sat Aug 29 14:16:26 EDT 2026
+
+===== GIT STATUS =====
+On branch agentcore-runtime
+Your branch is up to date with 'origin/agentcore-runtime'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	checkpoints/project-state.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+===== RECENT COMMITS =====
+ca98cd2 Consolidate AgentCore config and memory state
+108cf14 Deploy personal media agent with AgentCore
+4a3f7c7 Build initial personal media agent MVP
+
+===== PROJECT TREE =====
+.
+├── README.md
+├── __init__.py
+├── agent.py
+├── agentcore
+│   ├── agentcore.json
+│   ├── aws-targets.json
+│   └── cdk
+│       ├── README.md
+│       ├── bin
+│       ├── cdk.json
+│       ├── dist
+│       ├── jest.config.js
+│       ├── lib
+│       ├── package-lock.json
+│       ├── package.json
+│       ├── test
+│       └── tsconfig.json
+├── checkpoints
+│   ├── deployed-invocation.txt
+│   └── project-state.txt
+├── credentials.txt
+├── data
+│   └── sample_profile.json
+├── docs
+├── pyproject.toml
+├── requirements.txt
+├── src
+│   └── agents_for_humans
+│       └── __init__.py
+├── tests
+└── uv.lock
+
+13 directories, 19 files
+
+===== AGENTCORE STATUS =====
+AgentCore Status (target: default, us-west-2)
+
+Agents
+  RecommendationAgent: Deployed - Runtime: READY
+(arn:aws:bedrock-agentcore:us-west-2:471112779923:runtime/agentsforhumanscore_RecommendationAgent-UUT3f87YaO)
+  URL: https://bedrock-agentcore.us-west-2.amazonaws.com/runtimes/arn%3Aaws%3Abedrock-agentcore%3Aus-west-2%3A471112779923%3Aruntime%
+2Fagentsforhumanscore_RecommendationAgent-UUT3f87YaO/invocations
+
+Memories
+  AgentsForHumansMemory: Deployed (SEMANTIC, SUMMARIZATION, USER_PREFERENCE)
+(arn:aws:bedrock-agentcore:us-west-2:471112779923:memory/agentsforhumanscore_AgentsForHumansMemory-KI3pyT4cTg)
+
+===== AGENTCORE CONFIG =====
+{
+  "$schema": "https://schema.agentcore.aws.dev/v1/agentcore.json",
+  "name": "agentsforhumanscore",
+  "version": 1,
+  "managedBy": "CDK",
+  "tags": {
+    "agentcore:created-by": "agentcore-cli",
+    "agentcore:project-name": "agentsforhumanscore"
+  },
+  "runtimes": [
+    {
+      "name": "RecommendationAgent",
+      "build": "CodeZip",
+      "entrypoint": "agent.py",
+      "codeLocation": ".",
+      "runtimeVersion": "PYTHON_3_12",
+      "networkMode": "PUBLIC",
+      "protocol": "HTTP"
+    }
+  ],
+  "memories": [
+    {
+      "name": "AgentsForHumansMemory",
+      "eventExpiryDuration": 30,
+      "strategies": [
+        {
+          "type": "SEMANTIC",
+          "namespaceTemplates": [
+            "/users/{actorId}/facts"
+          ]
+        },
+        {
+          "type": "SUMMARIZATION",
+          "namespaceTemplates": [
+            "/summaries/{actorId}/{sessionId}"
+          ]
+        },
+        {
+          "type": "USER_PREFERENCE",
+          "namespaceTemplates": [
+            "/users/{actorId}/preferences"
+          ]
+        }
+      ]
+    }
+  ],
+  "knowledgeBases": [],
+  "credentials": [],
+  "evaluators": [],
+  "onlineEvalConfigs": [],
+  "agentCoreGateways": [],
+  "policyEngines": [],
+  "configBundles": [],
+  "abTests": [],
+  "harnesses": [],
+  "datasets": [],
+  "payments": []
+}
