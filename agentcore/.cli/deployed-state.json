@@ -9,8 +9,14 @@
             "roleArn": "arn:aws:iam::471112779923:role/AgentCore-agentsforhumans-ApplicationAgentRecommend-0V644XxB4R5p"
           }
         },
+        "memories": {
+          "AgentsForHumansMemory": {
+            "memoryId": "agentsforhumanscore_AgentsForHumansMemory-KI3pyT4cTg",
+            "memoryArn": "arn:aws:bedrock-agentcore:us-west-2:471112779923:memory/agentsforhumanscore_AgentsForHumansMemory-KI3pyT4cTg"
+          }
+        },
         "stackName": "AgentCore-agentsforhumanscore-default",
-        "deployHash": "ab4eed394518cc6a"
+        "deployHash": "c3435eb7e156d148"
       }
     }
   }
