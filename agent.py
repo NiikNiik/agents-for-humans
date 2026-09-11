@@ -14,7 +14,7 @@ from bedrock_agentcore.memory.integrations.strands.session_manager import (
 
 MEMORY_ID = "agentsforhumanscore_AgentsForHumansMemory-KI3pyT4cTg"
 MEMORY_REGION = "us-west-2"
-ACTOR_ID = "agents-for-humans-preference-test-v7"
+ACTOR_ID = "agents-for-humans-demo-user"
 PREFERENCE_STRATEGY_ID = "AgentsForHumansCustomPreference-o2t5Q16GkM"
 SEMANTIC_STRATEGY_ID = "AgentsForHumansMemory_Semantic-WI5kbHCmOj"
 
