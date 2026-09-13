@@ -9,7 +9,10 @@ authors = [
 requires-python = ">=3.12"
 dependencies = [
     "bedrock-agentcore>=1.22.0",
+    "boto3>=1.43.79",
     "strands-agents>=1.53.0",
+    "streamlit>=1.63.0",
+    "streamlit-local-storage>=0.0.25",
     "uvicorn[standard]>=0.52.4",
 ]
 
