@@ -1,3 +1,6 @@
 bedrock-agentcore>=1.22.0
 strands-agents>=1.53.0
 uvicorn[standard]>=0.52.4
+boto3
+streamlit
+streamlit-local-storage
