@@ -14,7 +14,6 @@ from bedrock_agentcore.memory.integrations.strands.session_manager import (
 
 MEMORY_ID = "agentsforhumanscore_AgentsForHumansMemory-KI3pyT4cTg"
 MEMORY_REGION = "us-west-2"
-ACTOR_ID = "agents-for-humans-demo-user"
 PREFERENCE_STRATEGY_ID = "AgentsForHumansCustomPreference-o2t5Q16GkM"
 SEMANTIC_STRATEGY_ID = "AgentsForHumansMemory_Semantic-WI5kbHCmOj"
 
@@ -28,7 +27,7 @@ def load_baseline_profile() -> dict:
 BASELINE_PROFILE = load_baseline_profile()
 
 
-def load_current_preferences() -> list[dict]:
+def load_current_preferences(actor_id: str) -> list[dict]:
     """
     Load all USER_PREFERENCE memory records for the current actor.
 
@@ -41,7 +40,7 @@ def load_current_preferences() -> list[dict]:
         region_name=MEMORY_REGION,
     )
 
-    namespace = f"/users/{ACTOR_ID}/preferences"
+    namespace = f"/users/{actor_id}/preferences"
     records = []
     next_token = None
 
@@ -156,8 +155,11 @@ app = BedrockAgentCoreApp()
 def invoke(payload, context):
     prompt = payload.get("prompt", "")
     session_id = context.session_id
+    actor_id = payload.get("actor_id", "")
+    if not actor_id:
+        raise ValueError("actor_id is required")
 
-    current_preferences = load_current_preferences()
+    current_preferences = load_current_preferences(actor_id)
 
     # Sort preferences from oldest to newest.
     sorted_preferences = sorted(
@@ -197,7 +199,7 @@ def invoke(payload, context):
 
     # Configure semantic long-term memory retrieval.
     retrieval_config = {
-        f"/users/{ACTOR_ID}/facts": RetrievalConfig(
+        f"/users/{actor_id}/facts": RetrievalConfig(
             # Find up to 2 strongly relevant semantic facts.
             top_k=2,
             relevance_score=0.7,
@@ -209,7 +211,7 @@ def invoke(payload, context):
     agentcore_memory_config = AgentCoreMemoryConfig(
         memory_id=MEMORY_ID,
         session_id=session_id,
-        actor_id=ACTOR_ID,
+        actor_id=actor_id,
         retrieval_config=retrieval_config,
     )
 
@@ -230,7 +232,7 @@ def invoke(payload, context):
     return {
         "result": str(response),
         "session_id": session_id,
-        "actor_id": ACTOR_ID,
+        "actor_id": actor_id,
     }
 
 
