@@ -89,7 +89,7 @@ st.caption(
 )
 
 
-if st.button("New Conversation"):
+if st.sidebar.button("New Conversation", use_container_width=True):
     st.session_state.session_id = new_session_id()
     st.session_state.messages = []
     st.rerun()
