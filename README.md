@@ -30,30 +30,7 @@ Newer explicit preferences override conflicting baseline information.
 
 ## Architecture
 
-```mermaid
-flowchart LR
-    U[User<br/>Prompts, new interests,<br/>dislikes, preference changes]
-    UI[Streamlit Web UI<br/>Chat interface<br/>New Conversation control<br/>Per-visitor actor ID]
-    P[Baseline Media Profile<br/>sample_profile.json<br/>Favorite artists, followed podcasts,<br/>broader interests]
-    M[Amazon Bedrock AgentCore Memory<br/><br/>USER_PREFERENCE<br/>Current preferences<br/><br/>SEMANTIC<br/>Relevant background facts]
-
-    subgraph RT[Amazon Bedrock AgentCore Runtime]
-        A[Drift Agent<br/>Strands Agents SDK<br/><br/>Combines baseline context,<br/>current preferences, and<br/>relevant semantic facts]
-    end
-
-    R[Personalized Media Recommendations<br/>Podcasts, books, music,<br/>videos, audiobooks]
-
-    U -->|interacts with| UI
-    UI -->|prompt + actor ID + session ID| A
-    A -->|conversation events| M
-    P -->|baseline context| A
-    M -->|retrieved preferences + facts| A
-    A -->|personalized reasoning| R
-    R -->|response| UI
-
-    N[Recommendation rule:<br/>newer explicit preferences override<br/>conflicting baseline profile data]
-    N -.-> A
-```
+![Drift architecture](docs/drift-architecture.png)
 
 ### Request flow
 
