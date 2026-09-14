@@ -107,7 +107,7 @@ pip install -r requirements.txt
 
 You need AWS credentials with access to the Bedrock and AgentCore resources used by your deployment. Configure the AWS CLI or another Boto3-supported credential source, and verify the intended AWS region before invoking or deploying resources.
 
-The hackathon deployment uses `us-west-2`.
+Make sure to use `us-west-2`.
 
 ### 5. Run the agent locally
 
@@ -131,7 +131,7 @@ A useful way to verify cross-session personalization is:
 
 1. Start one conversation and state a new preference, for example that you are currently interested in a particular genre or topic.
 2. Start a new conversation.
-3. Ask Drift for recommendations based on what it knows about you.
+3. Ask Drift  something similar to: "recommendations based on what it knows about you."
 4. Verify that the newer preference affects the recommendations despite the new session.
 
 Preference-reversal tests can also be used to confirm that newer explicit preferences supersede conflicting older information.
