@@ -83,6 +83,11 @@ st.write(
     "A personal media discovery agent that learns your preferences across conversations."
 )
 
+st.caption(
+    "Demo note: Drift starts with a sample media profile. "
+    "Your preferences can change over time and override that starting profile."
+)
+
 
 if st.button("New Conversation"):
     st.session_state.session_id = new_session_id()
