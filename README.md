@@ -30,7 +30,7 @@ Newer explicit preferences override conflicting baseline information.
 
 ## Architecture
 
-![Drift architecture](docs/drift-architecture.png)
+![Drift architecture](docs/ProjectDiagram.png)
 
 ### Request flow
 
